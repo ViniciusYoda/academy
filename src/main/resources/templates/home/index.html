@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css"> -->
 
     <meta name="author" content="Vinícius Yoda">
     <script src="https://kit.fontawesome.com/0066428d.js" crossorigin="anonymous"></script>
@@ -26,17 +26,35 @@
             </button>
 
             <div id="navMobile" class="navbar-collapse collapse justify-content-end">
-                <a class="nav-item nav-link" href="#">Home</a>
-                <a class="nav-item nav-link" href="#">Cadastrar Aluno</a>
-                <a class="nav-item nav-link" href="#">Pesquisar Aluno</a>
-                <a class="nav-item nav-link btn btn-danger text-white" href="#">Sair</a>
+                <a class="btn-nav nav-item nav-link" href="#"><i class="fas fa-home"></i> Home</a>
+                <a class="btn-nav nav-item nav-link" href="#"><i class="fas fa-user-graduate"></i> Cadastrar Aluno</a>
+                <a class="btn-nav nav-item nav-link" href="#"><i class="fas fa-search"></i> Pesquisar Aluno</a>
+                <a class="btn-nav nav-item nav-link btn btn-danger text-white" href="#"><i class="fas fa-times"></i> Sair</a>
             </div>
         </nav>
     </header>
 
-    <div class="container mt-4">
-        <button class="btn btn-primary">Teste</button>
+    <section class="neo-section" style="background-image: url('img/bg-index.jpg');">
+        <div class="sombra"></div>
+        <div class="center neo-container">
+            <h1 class="texto-centro">Sistema de Gerernciamento de Alunos</h1>
+        
+        <div class="botoes"></div>
+        <div class="wm">
+            <h5 class="btn">CADASTRAR ALUNO</h5>
+        </div>
+        <div class="wm">
+            <h5 class="btn justify-content-center">ENCONTRAR ALUNO</h5>
+        </div>
+        <div class="clear"></div>
     </div>
+    </section>
+
+    <footer>
+        <div class="rodape">
+            <span>Todos os Direitos Reservados - 2024 &copy; Vinícius Yoda</span>
+        </div>
+    </footer>
 
     <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
     <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
