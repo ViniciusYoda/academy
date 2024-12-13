@@ -7,6 +7,7 @@
 
     <meta name="author" content="Vinícius Yoda">
     <script src="https://kit.fontawesome.com/0066428d.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -16,48 +17,23 @@
 </head>
 <body>
     
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #4527A0;">
-            <a class="navbar-brand" href="#">
-                <img src="img/logo_header-site.png" alt="Logo Header" width="200px">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div id="navMobile" class="navbar-collapse collapse justify-content-end">
-                <a class="btn-nav nav-item nav-link" href="#"><i class="fas fa-home"></i> Home</a>
-                <a class="btn-nav nav-item nav-link" href="#"><i class="fas fa-user-graduate"></i> Cadastrar Aluno</a>
-                <a class="btn-nav nav-item nav-link" href="#"><i class="fas fa-search"></i> Pesquisar Aluno</a>
-                <a class="btn-nav nav-item nav-link btn btn-danger text-white" href="#"><i class="fas fa-times"></i> Sair</a>
-            </div>
-        </nav>
-    </header>
+    <div th:replace="fragmentos/fragmentos :: cabecalho"></div>
 
     <section class="neo-section" style="background-image: url('img/bg-index.jpg');">
         <div class="sombra"></div>
         <div class="center neo-container">
-            <h1 class="texto-centro">Sistema de Gerernciamento de Alunos</h1>
-        
-        <div class="botoes"></div>
-        <div class="wm">
-            <h5 class="btn">CADASTRAR ALUNO</h5>
+            <h1 class="texto-centro">Sistema de Gerenciamento de Alunos</h1>
+            <div class="d-flex justify-content-center mt-4">
+                <a href="#" class="btn btn-outline-light btn-lg mx-2">Cadastrar Aluno</a>
+                <a href="#" class="btn btn-outline-light btn-lg mx-2">Encontrar Aluno</a>
+            </div>
         </div>
-        <div class="wm">
-            <h5 class="btn justify-content-center">ENCONTRAR ALUNO</h5>
-        </div>
-        <div class="clear"></div>
-    </div>
     </section>
 
-    <footer>
-        <div class="rodape">
-            <span>Todos os Direitos Reservados - 2024 &copy; Vinícius Yoda</span>
-        </div>
-    </footer>
+    <div th:replace="fragmentos/fragmentos :: rodape"></div>
 
-    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
 
 </body>
 </html>
