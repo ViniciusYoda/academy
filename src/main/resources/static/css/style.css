@@ -12,6 +12,10 @@ body {
     padding: 0;
 }
 
+.container {
+    height: 100%;
+}
+
 /* nav {
     height: 90px;
     color: #fff;
