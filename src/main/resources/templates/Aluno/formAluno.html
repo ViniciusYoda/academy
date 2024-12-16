@@ -23,14 +23,22 @@
         <h4>+ Inserir Alunos</h4>
             <form action="/InsertAlunos" method="post" th:object="${aluno}" autocomplete="off">
                 <div class="row">
+                    
                     <div class="col-md-6 form-group offset-md-3">
+                        <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('nome')}">
+                            <label class="validation-message" th:error="*{nome}"></label>
+                        </div>
                         <label for="">Nome do Aluno</label>
                         <input class="form-control" placeholder="Ex: Catiele Silva" th:field="*{nome}">
                     </div>
                 </div>
 
                 <div class="row">
+                    
                     <div class="col-md-6 form-group offset-md-3">
+                        <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('curso')}">
+                            <label class="validation-message" th:error="*{curso}"></label>
+                        </div>
                         <label>Selecione o Curso</label>
                         <select class="form-control" th:field="*{curso}">
                             <option th:each="curso : ${T(br.com.academy.Enum.Curso).values()}" th:value="${curso}" th:text="${curso}"></option>
@@ -40,6 +48,9 @@
 
                 <div class="row">
                     <div class="col-md-6 form-group offset-md-3">
+                        <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('matricula')}">
+                            <label class="validation-message" th:error="*{matricula}"></label>
+                        </div>
                         <label>Gerar Matricula: </label>
                         <input readonly="readonly" class="form-control" id="matricula"  th:field="*{matricula}">
                         <button type="button" onClick="GerarMatricula()" class="btn btn-dark" style="margin-top: 10px;">Gerar</button>
@@ -48,6 +59,9 @@
 
                 <div class="row">
                     <div class="col-md-6 form-group offset-md-3">
+                        <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('status')}">
+                            <label class="validation-message" th:error="*{status}"></label>
+                        </div>
                         <label>Selecione o Status</label>
                         <select class="form-control" th:field="*{status}">
                             <option th:each="status : ${T(br.com.academy.Enum.Status).values()}" th:value="${status}" th:text="${status}"></option>
@@ -57,6 +71,9 @@
 
                 <div class="row">
                     <div class="col-md-6 form-group offset-md-3">
+                        <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('turno')}">
+                            <label class="validation-message" th:error="*{turno}"></label>
+                        </div>
                         <label for="">Turno: </label>
                         <input class="form-control" placeholder="Ex: Manhã" th:field="*{turno}">
                     </div>

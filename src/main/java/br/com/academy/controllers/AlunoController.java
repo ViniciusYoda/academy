@@ -2,6 +2,7 @@ package br.com.academy.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,30 +11,37 @@ import org.springframework.web.servlet.ModelAndView;
 import br.com.academy.dao.AlunoDao;
 import br.com.academy.model.Aluno;
 
+import jakarta.validation.Valid;
+
 @Controller
 public class AlunoController {
 
     @Autowired
     private AlunoDao alunorepositorio;
-    
+
     @GetMapping("/inserirAlunos")
-    public ModelAndView InsertAlunos(Aluno aluno){
+    public ModelAndView insertAlunos(Aluno aluno) {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("Aluno/formAluno");
         mv.addObject("aluno", new Aluno());
         return mv;
     }
 
-    @PostMapping("InsertAlunos")
-    public ModelAndView inserirAlunos(Aluno aluno){
+    @PostMapping("/inserirAlunos")
+    public ModelAndView inserirAlunos(@Valid Aluno aluno, BindingResult br) {
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("redirect:/alunos-adicionados");
-        alunorepositorio.save(aluno);
+        if (br.hasErrors()) {
+            mv.setViewName("Aluno/formAluno");
+            mv.addObject("aluno", aluno);
+        } else {
+            alunorepositorio.save(aluno);
+            mv.setViewName("redirect:/alunos-adicionados");
+        }
         return mv;
     }
 
-    @GetMapping("alunos-adicionados")
-    public ModelAndView listagemAlunos(){
+    @GetMapping("/alunos-adicionados")
+    public ModelAndView listagemAlunos() {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("Aluno/listAluno");
         mv.addObject("alunosList", alunorepositorio.findAll());
@@ -44,21 +52,30 @@ public class AlunoController {
     public ModelAndView alterar(@PathVariable("id") Integer id) {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("Aluno/alterar");
-        Aluno aluno = alunorepositorio.getOne(id);
-        mv.addObject("aluno", aluno);
+        Aluno aluno = alunorepositorio.findById(id).orElse(null);
+        if (aluno != null) {
+            mv.addObject("aluno", aluno);
+        } else {
+            mv.setViewName("redirect:/alunos-adicionados");
+        }
         return mv;
     }
 
     @PostMapping("/alterar")
-    public ModelAndView alterar(Aluno aluno){
+    public ModelAndView alterar(@Valid Aluno aluno, BindingResult br) {
         ModelAndView mv = new ModelAndView();
-        alunorepositorio.save(aluno);
-        mv.setViewName("redirect:/alunos-adicionados");
+        if (br.hasErrors()) {
+            mv.setViewName("Aluno/alterar");
+            mv.addObject("aluno", aluno);
+        } else {
+            alunorepositorio.save(aluno);
+            mv.setViewName("redirect:/alunos-adicionados");
+        }
         return mv;
     }
 
     @GetMapping("/excluir/{id}")
-    public String excluirAluno(@PathVariable("id") Integer id){
+    public String excluirAluno(@PathVariable("id") Integer id) {
         alunorepositorio.deleteById(id);
         return "redirect:/alunos-adicionados";
     }
