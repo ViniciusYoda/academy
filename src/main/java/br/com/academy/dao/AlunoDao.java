@@ -20,4 +20,6 @@ public interface AlunoDao extends JpaRepository<Aluno, Integer> {
 
     @Query("select j from Aluno j where j.status = 'CANCELADO'")
     public List<Aluno> findByStatusCancelado();
+
+    public List<Aluno> findByNomeContainingIgnoreCase(String nome);
 }
