@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Vinícius Yoda">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dyv/DN8Mb6xRb2/lD8lSowdPvqsPE/vnp2Fw+OabFa3gQ6arXp9EJ/uEZONnTP+qM9c5Wqww/LvlPJH+/L2tZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+
+    <title>Project Academy - Cadastro</title>
+</head>
+<body>
+
+    <div class="Login-Form">
+        <div class="container">
+            <div class="main-div">
+                <div class="texto-header">
+                    <h2>Cadastro de usuário</h2>
+                    <p>Cria seu usuário no sistema</p>
+                </div>
+
+                <form method="post" th:object="${usuario}" action="salvarUsuario">
+
+                    <div class="form-group">
+                        <input class="form-control" th:field="*{email}" placeholder="Digite seu email" type="email">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" th:field="*{user}" placeholder="username" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <input class="form-control" th:field="*{senha}" placeholder="senha" type="password">
+                    </div>
+
+                    <button class="btn btn-primary" type="submit">Cadastrar</button>
+                    <button type="button" class="btn btn-info" onclick="window.location.href='/'">Voltar</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
