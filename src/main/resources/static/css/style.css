@@ -14,6 +14,34 @@ body {
 
 .container {
     height: 100%;
+    
+}
+
+.main {
+    height: 100dvh;
+}
+
+.titulo-container {
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 20px;
+}
+
+.titulo-estilo-refinado {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white; 
+    text-align: center; 
+    border-bottom: 3px solid #6c63ff; 
+    display: inline-block; 
+    padding-bottom: 5px; 
+    text-transform: capitalize; 
+    letter-spacing: 1px; 
+}
+
+.msg-alert {
+    color: #fff;
 }
 
 nav {
@@ -133,6 +161,48 @@ a.btn-nav:hover {
     font-size: 1.25em;
     padding: 15px;
 }
+
+.row.justify-content-center button,
+.row.justify-content-center a {
+    margin-top: 10px; /* Espaçamento superior opcional */
+    padding: 10px 20px; /* Ajuste do tamanho dos botões */
+}
+
+.table {
+    background-color: white; /* Fundo da tabela */
+    color: black; /* Cor do texto */
+    border: 1px solid #ddd; /* Bordas */
+}
+
+.table th,
+.table td {
+    border: 1px solid #ddd; /* Bordas das células */
+    padding: 8px; /* Espaçamento interno */
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f2f2f2; /* Cor ao passar o mouse */
+}
+
+.table th {
+    background-color: #f8f9fa; /* Fundo do cabeçalho */
+    color: black; /* Cor do texto no cabeçalho */
+    text-align: center;
+}
+
+.table td {
+    text-align: left;
+}
+
+.table a {
+    color: #fff; /* Links na tabela */
+}
+
+.table a:hover {
+    color: #7f8183; /* Links ao passar o mouse */
+}
+
+
 
 /* Responsividade */
 

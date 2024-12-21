@@ -24,7 +24,10 @@
     <div class="container" style="margin-top: 50px;"></div>
 
     <div class="container">
-        <h3>Alunos Ativos</h3>
+        <div class="main">
+        <div class="titulo-container">
+            <h3 class="titulo-estilo-refinado">Alunos Ativos</h3>
+        </div>
         <hr>
         <table class="table table-bordered table-hover">
             <thead>
@@ -44,7 +47,7 @@
                     <td th:text="${alunos.turno}"></td>
 
                     <td>
-                        <a class="btn btn-primary" th:href="@{alterar/{id}{id=${alunos.id}}}">
+                        <a class="btn btn-primary" th:href="@{/alterar/{id}(id=${aluno.id})}">
                             <i class="fas fa-edit"></i>Editar</a>
                         <a class="btn btn-danger" th:href="@{excluir/{id}{id=${alunos.id}}}">
                             <i class="fas fa-times"></i>Excluir</a>
@@ -52,6 +55,7 @@
                 </tr>
             </tbody>
         </table>
+    </div>
     </div>
 
     <div th:replace="fragmentos/fragmentos :: rodape"></div>
