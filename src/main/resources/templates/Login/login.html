@@ -26,13 +26,16 @@
                     <p>Insira suas credencias para efetuar o login no sistema</p>
                 </div>
 
-                <form method="post" action="/login">
+                <form method="post" action="/login" th:object="${usuario}">
+                    <div class="alert alert-danger" role="alert" th:if="${msg}">
+                        <strong th:text="${msg}"></strong>
+                    </div>
                     <div class="form-group">
-                        <input class="form-control" placeholder="username" type="text">
+                        <input th:field="*{user}" class="form-control" placeholder="username" type="text">
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control" placeholder="senha" type="password">
+                        <input th:field="*{senha}" class="form-control" placeholder="senha" type="password">
                     </div>
 
                     <div class="cadastro">

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import br.com.academy.Exceptions.CriptoExistException;
 import br.com.academy.model.Usuario;
 import br.com.academy.Exceptions.EmailExistsException;
+import br.com.academy.Exceptions.ServiceExc;
 import br.com.academy.dao.UsuarioDao;
 import br.com.academy.util.Util;
 
@@ -29,5 +30,10 @@ public class ServiceUsuario {
         }
 
         repositorioUsuario.save(user);
+    }
+
+    public Usuario loginUser(String user, String senha) throws ServiceExc {
+        Usuario userLogin = repositorioUsuario.buscarLogin(user, senha);
+        return userLogin;
     }
 }
