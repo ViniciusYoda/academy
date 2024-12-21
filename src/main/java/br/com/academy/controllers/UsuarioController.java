@@ -11,7 +11,7 @@ import br.com.academy.dao.UsuarioDao;
 import br.com.academy.model.Aluno;
 import br.com.academy.model.Usuario;
 import br.com.academy.service.ServiceUsuario;
-import br.com.academy.Exception.ServiceExc;
+import br.com.academy.Exceptions.ServiceExc;
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
@@ -32,6 +32,7 @@ public class UsuarioController {
     public ModelAndView login() {
         ModelAndView mv = new ModelAndView();
         mv.setViewName("Login/login");
+        mv.addObject("usuario", new Usuario());
         return mv;
     }
 
@@ -64,7 +65,7 @@ public class UsuarioController {
         ModelAndView mv = new ModelAndView();
         mv.addObject("usuario", new Usuario());
         if (br.hasErrors()) {
-            mv.setViewname("Login/login");
+            mv.setViewName("Login/login");
         }
 
         Usuario userLogin = serviceUsuario.loginUser(usuario.getUser(), Util.md5(usuario.getSenha()));
