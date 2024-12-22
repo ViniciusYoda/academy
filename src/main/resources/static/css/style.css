@@ -162,6 +162,11 @@ a.btn-nav:hover {
     padding: 15px;
 }
 
+.wm a {
+    text-decoration: none;
+    padding: 20px 30px;
+}
+
 .row.justify-content-center button,
 .row.justify-content-center a {
     margin-top: 10px; /* Espaçamento superior opcional */

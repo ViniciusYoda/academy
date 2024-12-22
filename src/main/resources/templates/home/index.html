@@ -16,6 +16,13 @@
     <title>Project Academy</title>
 </head>
 <body>
+
+    <!-- <div style="margin: 0; text-align: center;" class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Seja bem vindo: </strong> <span th:text="${session.usarioLogado.user}"></span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div> -->
     
     <div th:replace="fragmentos/fragmentos :: cabecalho"></div>
 
@@ -23,9 +30,18 @@
         <div class="sombra"></div>
         <div class="center neo-container">
             <h1 class="texto-centro">Sistema de Gerenciamento de Alunos</h1>
-            <div class="d-flex justify-content-center mt-4">
+            <!-- <div class="d-flex justify-content-center mt-4">
                 <a th:href="@{inserirAlunos}" class="btn btn-outline-light btn-lg mx-2">Cadastrar Aluno</a>
                 <a th:href="@{filtro-alunos}" class="btn btn-outline-light btn-lg mx-2">Encontrar Aluno</a>
+            </div> -->
+            <div class="botoes">
+                <div class="wm">
+                    <a th:href="@{inserirAlunos}" class="btn-home">Cadastrar Aluno</a>
+                </div>
+                <div class="wm">
+                    <a th:href="@{alunos-adicionados}" class="btn-home">Encontrar Aluno</a>
+                </div>
+                <div class="clear"></div>
             </div>
         </div>
     </section>
@@ -56,9 +72,5 @@
     </div>
 
     <div th:replace="fragmentos/fragmentos :: rodape"></div>
-
-    <!-- <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
-
 </body>
 </html>
