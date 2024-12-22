@@ -3,22 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="/webjars/bootstrap/4.5.0/css/bootstrap.min.css"> -->
-
     <meta name="author" content="Vinícius Yoda">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-dyv/DN8Mb6xRb2/lD8lSowdPvqsPE/vnp2Fw+OabFa3gQ6arXp9EJ/uEZONnTP+qM9c5Wqww/LvlPJH+/L2tZg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&family=Ubuntu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
-
     <title>Project Academy</title>
 </head>
 <body>
-
     <header th:fragment="cabecalho">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <a class="navbar-brand" th:href="@{/index}">
@@ -29,7 +23,7 @@
             </button>
 
             <div id="navMobile" class="navbar-collapse collapse justify-content-end">
-                <a class="btn-nav nav-item nav-link" href="/"><i class="fas fa-home"></i> Home</a>
+                <a class="btn-nav nav-item nav-link" href="/index"><i class="fas fa-home"></i> Home</a>
                 <a class="btn-nav nav-item nav-link" th:href="@{inserirAlunos}"><i class="fas fa-user-graduate"></i> Cadastrar Aluno</a>
                 <a data-toggle="modal" data-target="#modalPesquisa" class="btn-nav nav-item nav-link" th:href="@{filtro-alunos}"><i class="fas fa-search"></i> Pesquisar Aluno</a>
                 <form action="/logout" method="post">
@@ -38,7 +32,6 @@
             </div>
         </nav>
     </header>
-
     <footer th:fragment="rodape">
         <div class="rodape">
             <span>Todos os Direitos Reservados - 2024 &copy; Vinícius Yoda</span>

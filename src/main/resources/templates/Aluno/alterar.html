@@ -42,7 +42,7 @@
                 <div class="row">
                     <div class="col-md-6 form-group offset-md-3">
                         <label>Gerar Matricula: </label>
-                        <input readonly="readonly" class="form-control" id="matricula"  th:field="*{matricula}">
+                        <input readonly class="form-control" id="matricula"  th:field="*{matricula}">
                         <button type="button" onClick="GerarMatricula()" class="btn btn-dark" style="margin-top: 10px;">Gerar</button>
                     </div>
                 </div>
@@ -63,10 +63,9 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <button type="submit" class="btn btn-success offset-md-5">Salvar</button>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <a href="" class="btn btn-outline-danger">Voltar</a>
+                <div class="row justify-content-center mt-3">
+                    <button type="submit" class="btn btn-success mx-2">Salvar</button>
+                    <a href="" class="btn btn-outline-danger mx-2">Voltar</a>
                 </div>
                 
             </form>

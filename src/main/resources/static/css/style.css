@@ -3,10 +3,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 body {
-    background: linear-gradient(to right, #1d1e2c, #3c1053);
     font-family: 'Ubuntu', sans-serif;
     margin: 0;
     padding: 0;
@@ -14,11 +14,12 @@ body {
 
 .container {
     height: 100%;
-    
+    width: 100%;
 }
 
 .main {
     height: 100dvh;
+
 }
 
 .titulo-container {
@@ -31,7 +32,7 @@ body {
 .titulo-estilo-refinado {
     font-size: 2.5rem;
     font-weight: 700;
-    color: white; 
+    color: #7f8183; 
     text-align: center; 
     border-bottom: 3px solid #6c63ff; 
     display: inline-block; 
@@ -84,6 +85,7 @@ a.btn-nav:hover {
     align-items: center;
     justify-content: center;
     padding: 30px;
+
     color: white;
 }
 
@@ -143,6 +145,7 @@ a.btn-nav:hover {
     transition: all 0.3s ease-in-out;
     color: white;
     text-decoration: none;
+    padding: 2% 15%;
 }
 
 .botoes {
@@ -164,7 +167,7 @@ a.btn-nav:hover {
 
 .wm a {
     text-decoration: none;
-    padding: 20px 30px;
+    padding: 20px 30px
 }
 
 .row.justify-content-center button,
@@ -174,24 +177,24 @@ a.btn-nav:hover {
 }
 
 .table {
-    background-color: white; /* Fundo da tabela */
-    color: black; /* Cor do texto */
-    border: 1px solid #ddd; /* Bordas */
+    background-color: white; 
+    color: black; 
+    border: 1px solid #ddd; 
 }
 
 .table th,
 .table td {
-    border: 1px solid #ddd; /* Bordas das células */
-    padding: 8px; /* Espaçamento interno */
+    border: 1px solid #ddd; 
+    padding: 8px; 
 }
 
 .table-hover tbody tr:hover {
-    background-color: #f2f2f2; /* Cor ao passar o mouse */
+    background-color: #f2f2f2; 
 }
 
 .table th {
-    background-color: #f8f9fa; /* Fundo do cabeçalho */
-    color: black; /* Cor do texto no cabeçalho */
+    background-color: #f8f9fa;
+    color: black; 
     text-align: center;
 }
 
@@ -200,11 +203,11 @@ a.btn-nav:hover {
 }
 
 .table a {
-    color: #fff; /* Links na tabela */
+    color: #fff; 
 }
 
 .table a:hover {
-    color: #7f8183; /* Links ao passar o mouse */
+    color: #7f8183; 
 }
 
 

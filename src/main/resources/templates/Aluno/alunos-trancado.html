@@ -43,10 +43,11 @@
                     <td th:text="${alunos.turno}"></td>
 
                     <td>
-                        <a class="btn btn-primary" th:href="@{alterar/{id}{id=${alunos.id}}}">
+                        <a class="btn btn-primary" th:href="@{/alterar/{id}(id=${alunos.id})}">
                             <i class="fas fa-edit"></i>Editar</a>
-                        <a class="btn btn-danger" th:href="@{excluir/{id}{id=${alunos.id}}}">
+                        <a class="btn btn-danger" th:href="@{/excluir/{id}(id=${alunos.id})}">
                             <i class="fas fa-times"></i>Excluir</a>
+                        
                     </td>
                 </tr>
             </tbody>
